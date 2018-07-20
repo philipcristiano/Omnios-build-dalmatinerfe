@@ -20,7 +20,7 @@ package:
 	mkdir -p ${IPS_BUILD_DIR}/opt/ ${IPS_TMP_DIR} "${IPS_BUILD_DIR}/etc"
 	mkdir -p ${IPS_BUILD_DIR}/data/${PROJECT}/etc
 	echo ls ${RELEASE_DIR}
-	mv ${RELEASE_DIR}/dfe/etc/dfe.conf.example ${IPS_BUILD_DIR}/data/${PROJECT}/etc/dfe.conf
+	mv ${RELEASE_DIR}/dfe/etc/dfe.conf ${IPS_BUILD_DIR}/data/${PROJECT}/etc/dfe.conf
 
   # Remove git files/dirs
 	( find ${RELEASE_DIR} -type d -name ".git" && find ${RELEASE_DIR} -name ".gitignore" && find ${RELEASE_DIR} -name ".gitmodules" ) | xargs -d '\n' rm -rf
