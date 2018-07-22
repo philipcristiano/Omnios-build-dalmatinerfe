@@ -15,6 +15,7 @@ set name=pkg.fmri value=${IPS_FMRI}
 set name=pkg.description value="${IPS_DESCRIPTION}"
 set name=pkg.summary value="${IPS_SUMMARAY}"
 set name=variant.arch value=${ARCH}
+depend fmri=pkg:/server/dalmatiner-common type=require
 group groupname=${PROJECT}
 user username=${PROJECT} group=${PROJECT} home-dir=/opt/${PROJECT}
 endef
@@ -46,6 +47,7 @@ ips-package: ips-prototype
 	pkglint ${IPS_TMP_DIR}/pkg.pm5.final
 
 define IPS_TRANSFORM
+<transform dir path=data$$ -> drop>
 <transform dir path=usr$$ -> drop>
 <transform dir path=lib$$ -> drop>
 <transform dir path=lib/svc$$ -> drop>
