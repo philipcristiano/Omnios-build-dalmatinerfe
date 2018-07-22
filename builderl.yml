@@ -17,6 +17,7 @@ stages:
       - pwd
       - make clone
       - make build
+      - make ips-prototype
       - make package
       - make ips-package
 

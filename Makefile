@@ -27,6 +27,10 @@ package:
 	cp -R ${RELEASE_DIR} ${IPS_BUILD_DIR}/opt/${PROJECT}
 	rm -rf ${IPS_BUILD_DIR}/opt/${PROJECT}/${PROJECT}_release-*.tar.gz
 
+  # Default rules file
+	cp  config/rules.ot "${IPS_BUILD_DIR}/data/dalmatinerfe/etc/rules.ot"
+	$(call add-ips-transform, "<transform file path=data/dalmatinerfe/etc/rules.ot -> add preserve true>")
+
 publish: ips-package
 ifndef PKGSRVR
 	echo "Need to define PKGSRVR, something like http://localhost:10000"
