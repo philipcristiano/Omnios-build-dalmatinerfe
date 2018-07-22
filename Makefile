@@ -26,7 +26,6 @@ package:
 	( find ${RELEASE_DIR} -type d -name ".git" && find ${RELEASE_DIR} -name ".gitignore" && find ${RELEASE_DIR} -name ".gitmodules" ) | xargs -d '\n' rm -rf
 	cp -R ${RELEASE_DIR} ${IPS_BUILD_DIR}/opt/${PROJECT}
 	rm -rf ${IPS_BUILD_DIR}/opt/${PROJECT}/${PROJECT}_release-*.tar.gz
-	cp LICENSE.pkg ${IPS_BUILD_DIR}/
 
 publish: ips-package
 ifndef PKGSRVR
