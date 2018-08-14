@@ -22,6 +22,10 @@ package:
 	echo ls ${RELEASE_DIR}
 	mv ${RELEASE_DIR}/dfe/etc/dfe.conf ${IPS_BUILD_DIR}/data/${PROJECT}/etc/dfe.conf
 
+	# SMF
+	mkdir -p ${IPS_BUILD_DIR}/lib/svc/manifest/application/
+	cp smf.xml ${IPS_BUILD_DIR}/lib/svc/manifest/application/${PROJECT}.xml
+
   # Remove git files/dirs
 	( find ${RELEASE_DIR} -type d -name ".git" && find ${RELEASE_DIR} -name ".gitignore" && find ${RELEASE_DIR} -name ".gitmodules" ) | xargs -d '\n' rm -rf
 	cp -R ${RELEASE_DIR} ${IPS_BUILD_DIR}/opt/${PROJECT}
