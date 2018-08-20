@@ -21,6 +21,7 @@ package:
 	mkdir -p ${IPS_BUILD_DIR}/data/${PROJECT}/etc
 	echo ls ${RELEASE_DIR}
 	mv ${RELEASE_DIR}/dfe/etc/dfe.conf ${IPS_BUILD_DIR}/data/${PROJECT}/etc/dfe.conf
+	$(call add-ips-transform, "<transform file path=data/dalmatinerfe/etc/dfe.conf -> add preserve true>")
 
 	# SMF
 	mkdir -p ${IPS_BUILD_DIR}/lib/svc/manifest/application/
