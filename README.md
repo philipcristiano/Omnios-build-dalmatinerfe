@@ -2,6 +2,8 @@
 
 Published to http://repository.stratobuilder.com
 
+CI: https://builderl.stratobuilder.com/builds/philipcristiano/omniosce-build-dalmatinerfe
+
 
 ```
 pkg set-publisher http://repository.stratobuilder.com repository.stratobuilder.com
