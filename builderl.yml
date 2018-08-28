@@ -23,6 +23,6 @@ stages:
 
 
   - name: publish
-    match: "^build$"
+    match: "^master$"
     steps:
       - make publish
